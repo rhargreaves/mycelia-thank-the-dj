@@ -1,0 +1,24 @@
+app
+
+tells where music is plyaed on radio globally
+
+when get info
+
+zoom in and see hotspots
+
+curate this info back to user
+
+linked data/social media
+
+get song name - get social media data on song
+
+follow the trail of the play???
+
+
+for the artist - long term - looking back - regular spikes, particular city, loyal djs, discovering these liyal fans
+
+
+real time alerting of djs playing songs
+
+allowing for a personal connection
+
