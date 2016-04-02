@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rhargreaves/mycelia-thank-the-dj/issues"
   },
-  "homepage": "https://github.com/rhargreaves/mycelia-thank-the-dj#readme"
+  "homepage": "https://github.com/rhargreaves/mycelia-thank-the-dj#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
