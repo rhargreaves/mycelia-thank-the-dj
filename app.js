@@ -9,11 +9,14 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 var url = "http://search.radioplayer.co.uk/qp/v3/onair?rpIds=340,1026,1094,1336,1254,425,341,342,343,344,347,349";
+var requestedSongName = "No song entered please add a song";
 
 app.get('/', function (req, res) {	
 	getJsonFromJsonP(url, function(error, json){
-		var songName = req.query.songname;
-		console.log(songName);
+		requestedSongName = req.query.songname;
+		console.log(requestedSongName);
+		
+		//console.log(json.results)
 		_.each(json.results, findSongPlay);
 	});
 	
@@ -23,8 +26,11 @@ app.get('/', function (req, res) {
 app.listen(3000);
 
 var findSongPlay = function(stationResult){
-	var songPlay = _.findWhere(stationResult, function(result){ if(result ==null) {return false;}return result.song; });
-		console.log(songPlay);
+
+	var songPlays = _.findWhere(stationResult,{song : true });
+	console.log(songPlays);
+	//var queriedSongPlays = _.findWhere(songPlays, {name: requestedSongName });
+		
 }
 
 
