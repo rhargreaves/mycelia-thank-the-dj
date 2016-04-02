@@ -1,0 +1,12 @@
+as an artist 
+i want to see what radio stations are playing my song
+
+as an artist 
+i want to see the locations of these radio stations on a map
+
+as an artist i want to be able to contact that radio station
+to say thankyou via twitter
+
+as an artist i want to tell the app
+to alert me when my song is played
+at give me details of the station it was played on
