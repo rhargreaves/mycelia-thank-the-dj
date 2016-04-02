@@ -9,14 +9,12 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 var url = "http://search.radioplayer.co.uk/qp/v3/onair?rpIds=340,1026,1094,1336,1254,425,341,342,343,344,347,349";
-var requestedSongName = "No song entered please add a song";
+var requestedArtist = "No song entered please add a song";
 
 app.get('/', function (req, res) {	
 	getJsonFromJsonP(url, function(error, json){
-		requestedSongName = req.query.songname;
-		console.log(requestedSongName);
-		
-		//console.log(json.results)
+		requestedArtist = req.query.artistname;
+		console.log(requestedArtist);
 		_.each(json.results, findSongPlay);
 	});
 	
@@ -26,13 +24,8 @@ app.get('/', function (req, res) {
 app.listen(3000);
 
 var findSongPlay = function(stationResult){
-
-	var songPlays = _.findWhere(stationResult,{song : true });
-	console.log(songPlays);
-	
-	//This line would be improved for a real situation
-	//var queriedSongPlays = _.findWhere(songPlays, {name: requestedSongName });
-		
+	var songPlaysFromResults = _.findWhere(stationResult,{song : true , artistName: requestedArtist });
+	console.log(songPlaysFromResults);		
 }
 
 
