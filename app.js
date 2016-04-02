@@ -1,24 +1,30 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var request = require('request');
+var _ = require('underscore');
 
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-var url = "http://search.radioplayer.co.uk/qp/v3/onair?rpIds=340";
+var url = "http://search.radioplayer.co.uk/qp/v3/onair?rpIds=340,1026,1094,1336,1254,425,341,342,343,344,347,349";
 
 app.get('/', function (req, res) {	
 	getJsonFromJsonP(url, function(error, json){
-		console.log(json);
-	    res.render('home');
-	})
+		
+		_.each(json.results, findSongPlay);
+	});
 	
-	
+	res.render('home');
 });
 
 app.listen(3000);
+
+var findSongPlay = function(stationResult){
+	var songPlay = _.findWhere(stationResult, function(result){ if(result ==null) {return false;}return result.song; });
+		console.log(songPlay);
+}
 
 
 var getJsonFromJsonP = function (url, callback) {
