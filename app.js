@@ -12,7 +12,8 @@ var url = "http://search.radioplayer.co.uk/qp/v3/onair?rpIds=340,1026,1094,1336,
 
 app.get('/', function (req, res) {	
 	getJsonFromJsonP(url, function(error, json){
-		
+		var songName = req.query.songname;
+		console.log(songName);
 		_.each(json.results, findSongPlay);
 	});
 	
