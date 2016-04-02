@@ -1,0 +1,19 @@
+{
+  "name": "mycelia-thank-the-dj",
+  "version": "1.0.0",
+  "description": "Thank The DJ App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhargreaves/mycelia-thank-the-dj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhargreaves/mycelia-thank-the-dj/issues"
+  },
+  "homepage": "https://github.com/rhargreaves/mycelia-thank-the-dj#readme"
+}
