@@ -29,6 +29,8 @@ var findSongPlay = function(stationResult){
 
 	var songPlays = _.findWhere(stationResult,{song : true });
 	console.log(songPlays);
+	
+	//This line would be improved for a real situation
 	//var queriedSongPlays = _.findWhere(songPlays, {name: requestedSongName });
 		
 }

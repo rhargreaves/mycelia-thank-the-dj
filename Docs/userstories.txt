@@ -1,5 +1,5 @@
 as an artist 
-i want to see what radio stations are playing my song
+i want to see what radio stations are playing my songs
 
 as an artist 
 i want to see the locations of these radio stations on a map
