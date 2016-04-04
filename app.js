@@ -51,7 +51,7 @@ app.get('/', function (req, res) {
 	
 	
 	
-	res.render('home', {songName: songToReport.name, showName: songToReport.name, stationName:songToReport.serviceName, helpers: {link: function (stationName) {return new Handlebars.SafeString(
+	res.render('home', {songName: songToReport.name, showName: songToReport.name, stationName:songToReport.serviceName,image: songToReport.imageUrl, helpers: {link: function (stationName) {return new Handlebars.SafeString(
     stationName.replace(' ', '%20')
   );}}});
 });
